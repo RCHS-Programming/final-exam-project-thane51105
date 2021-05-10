@@ -1,18 +1,30 @@
-#Greenfoot project file
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+#Greenfoot properties
+#Mon May 10 08:39:57 EDT 2021
+project.charset=UTF-8
 mainWindow.height=358
-mainWindow.width=713
-mainWindow.x=391
+editor.fx.0.width=0
+readme.y=10
+readme.x=10
+class.playerBody.superclass=greenfoot.Actor
+version=3.0.0
+class.Player.image=snakeHead.png.jpg
+readme.height=58
+class.SnakeWorld.image=sand2.jpg
+class.poisonApple.image=apple2.png
+class.playerBody.image=snakeBody.jpg
+world.lastInstantiated=SnakeWorld
+class.SnakeWorld.superclass=greenfoot.World
+class.Apple.superclass=greenfoot.Actor
+editor.fx.0.y=0
 mainWindow.y=213
+mainWindow.x=391
+editor.fx.0.x=0
+class.poisonApple.superclass=greenfoot.Actor
+readme.width=47
+editor.fx.0.height=0
 package.numDependencies=0
 package.numTargets=0
-project.charset=UTF-8
-readme.height=58
+mainWindow.width=713
 readme.name=@README
-readme.width=47
-readme.x=10
-readme.y=10
-version=3.0.0
+class.Apple.image=apple1.png
+class.Player.superclass=greenfoot.Actor
