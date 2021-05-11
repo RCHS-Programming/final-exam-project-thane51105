@@ -1,26 +1,28 @@
 #Greenfoot properties
-#Mon May 10 08:39:57 EDT 2021
+#Tue May 11 08:35:36 EDT 2021
+class.snakeBody.image=snakeBody.jpg
 project.charset=UTF-8
 mainWindow.height=358
 editor.fx.0.width=0
 readme.y=10
 readme.x=10
-class.playerBody.superclass=greenfoot.Actor
 version=3.0.0
-class.Player.image=snakeHead.png.jpg
+class.Player.image=snakeBody - Copy.jpg
 readme.height=58
 class.SnakeWorld.image=sand2.jpg
+class.Wall.superclass=greenfoot.Actor
 class.poisonApple.image=apple2.png
-class.playerBody.image=snakeBody.jpg
+class.Wall.image=bricks3.jpg
 world.lastInstantiated=SnakeWorld
 class.SnakeWorld.superclass=greenfoot.World
-class.Apple.superclass=greenfoot.Actor
 editor.fx.0.y=0
+class.Apple.superclass=greenfoot.Actor
 mainWindow.y=213
 mainWindow.x=391
 editor.fx.0.x=0
 class.poisonApple.superclass=greenfoot.Actor
 readme.width=47
+class.snakeBody.superclass=greenfoot.Actor
 editor.fx.0.height=0
 package.numDependencies=0
 package.numTargets=0
