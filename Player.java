@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    public boolean applesPresent;
+    private int Segments;
+    public Player()
+    {
+        Segments = 0;
+    }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,7 +23,7 @@ public class Player extends Actor
         Turn();
         eatApples();
         touchWall();
-        applesPresent = true;
+        touchBody();
     }
     
     public void Turn()
@@ -40,18 +44,31 @@ public class Player extends Actor
         if(isTouching(Apple.class))
         {
             removeTouching(Apple.class);
-            applesPresent = false; 
+            Segments = Segments + 2;
         }
         
         if(isTouching(poisonApple.class))
         {
             removeTouching(poisonApple.class);
+            Segments = Segments -3;
+            if( Segments < 0)
+            {
+                Greenfoot.stop();
+            }
         }
     }
     
     public void touchWall()
     {
         if(isTouching(Wall.class))
+        {
+            Greenfoot.stop();
+        }
+    }
+    
+    public void touchBody()
+    {
+        if( isTouching(snakeBody.class))
         {
             Greenfoot.stop();
         }

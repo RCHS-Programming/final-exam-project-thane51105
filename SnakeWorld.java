@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SnakeWorld extends World
 {
-    public boolean applesPresent;
     
     /**
      * Constructor for objects of class SnakeWorld.
@@ -19,8 +18,7 @@ public class SnakeWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
         makeWalls();
-        applesPresent = false;
-        makeApples();
+       // makeApples();
     }
     
     public void makeWalls()
@@ -46,15 +44,12 @@ public class SnakeWorld extends World
         }
     }
     
-    public void makeApples()
-    {
-        if( applesPresent == false)
-        {
-            int x = Greenfoot.getRandomNumber(550) + 120; 
-            int y = Greenfoot.getRandomNumber(100) + 500;
-            addObject( new Apple(), x, y);
-            applesPresent = true;
-        }
-    }
-    
+   //public void makeApples()
+   //{
+      // if ( ! getWorld().getObjects(Apple.class).isEmpty())
+       //{
+           
+       // }
+    //}
+   
 }
