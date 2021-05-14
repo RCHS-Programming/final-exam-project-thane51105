@@ -9,9 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private int Segments;
+    public int numberOfApples;
+    public int numberOfPoison;
     public Player()
     {
         Segments = 0;
+        numberOfApples = 0;
+        numberOfPoison = 0;
     }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -24,6 +28,8 @@ public class Player extends Actor
         eatApples();
         touchWall();
         touchBody();
+        makeApples();
+        makePoison();
     }
     
     public void Turn()
@@ -45,17 +51,42 @@ public class Player extends Actor
         {
             removeTouching(Apple.class);
             Segments = Segments + 2;
+            numberOfApples = numberOfApples - 1;
         }
         
         if(isTouching(poisonApple.class))
         {
             removeTouching(poisonApple.class);
             Segments = Segments -3;
+            numberOfPoison = numberOfPoison - 1;
             if( Segments < 0)
             {
                 Greenfoot.stop();
             }
         }
+    }
+    
+    public void makeApples()
+    {
+        if( numberOfApples < 1)
+        {
+           int x = Greenfoot.getRandomNumber(600) + 100;
+           int y = Greenfoot.getRandomNumber(600) + 100;
+           getWorld().addObject( new Apple(), x, y);
+           numberOfApples = numberOfApples + 1;
+        }
+        
+    }
+    
+    public void makePoison()
+    {
+       if( numberOfPoison < 1)
+        {
+           int x = Greenfoot.getRandomNumber(600) + 100;
+           int y = Greenfoot.getRandomNumber(600) + 100;
+           getWorld().addObject( new poisonApple(), x, y);
+           numberOfPoison = numberOfPoison + 1;
+        } 
     }
     
     public void touchWall()

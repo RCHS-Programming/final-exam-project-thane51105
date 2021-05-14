@@ -14,6 +14,16 @@ public class poisonApple extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+     //   makeApples();
     }    
+    
+       public void makeApples()
+   {
+       if ( getWorld().getObjects(poisonApple.class).isEmpty())
+       {
+           int x = Greenfoot.getRandomNumber(600) + 100;
+           int y = Greenfoot.getRandomNumber(600) + 100;
+           getWorld().addObject( new poisonApple(), x, y);
+        }
+    }
 }

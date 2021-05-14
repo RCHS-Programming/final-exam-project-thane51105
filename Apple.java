@@ -14,16 +14,16 @@ public class Apple extends Actor
      */
     public void act() 
     {
-        makeApples();
+      //  makeApples();
     }    
     
-       public void makeApples()
-   {
-       if ( ! getWorld().getObjects(Apple.class).isEmpty())
-       {
-           int x = Greenfoot.getRandomNumber(600) + 100;
-           int y = Greenfoot.getRandomNumber(600) + 100;
-           getWorld().addObject( new Apple(), x, y);
-        }
-    }
+     //  public void makeApples()
+   //{
+     //  if ( getWorld().getObjects(Apple.class).isEmpty())
+    //   {
+     //      int x = Greenfoot.getRandomNumber(600) + 100;
+     //      int y = Greenfoot.getRandomNumber(600) + 100;
+      //     getWorld().addObject( new Apple(), x, y);
+     //   }
+   // }
 }
