@@ -18,7 +18,7 @@ public class SnakeWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
         makeWalls();
-       // makeApples();
+        makeApples();
     }
     
     public void makeWalls()
@@ -44,12 +44,14 @@ public class SnakeWorld extends World
         }
     }
     
-   //public void makeApples()
-   //{
-      // if ( ! getWorld().getObjects(Apple.class).isEmpty())
-       //{
-           
-       // }
-    //}
+   public void makeApples()
+   {
+       if ( ! getWorld().getObjects(Apple.class).isEmpty())
+       {
+           int x = Greenfoot.getRandomNumber(600) + 100;
+            int y = Greenfoot.getRandomNumber(600) + 100;
+           addObject( new Apple(), x, y);
+        }
+    }
    
 }
