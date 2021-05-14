@@ -18,6 +18,7 @@ public class SnakeWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
         makeWalls();
+        addObject( new Player(), 400, 400);
     }
     
     public void makeWalls()
