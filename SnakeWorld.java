@@ -19,6 +19,7 @@ public class SnakeWorld extends World
         super(800, 800, 1); 
         makeWalls();
         addObject( new Player(), 400, 400);
+        addObject( new snakeBody(), 350, 400);
     }
     
     public void makeWalls()

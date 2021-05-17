@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    private int Segments;
+    public int Segments;
     public int numberOfApples;
     public int numberOfPoison;
     public Player()
@@ -17,6 +17,7 @@ public class Player extends Actor
         numberOfApples = 0;
         numberOfPoison = 0;
     }
+
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,6 +31,7 @@ public class Player extends Actor
         touchBody();
         makeApples();
         makePoison();
+        makeSegments();
     }
     
     public void Turn()
@@ -75,7 +77,6 @@ public class Player extends Actor
            getWorld().addObject( new Apple(), x, y);
            numberOfApples = numberOfApples + 1;
         }
-        
     }
     
     public void makePoison()
@@ -87,6 +88,16 @@ public class Player extends Actor
            getWorld().addObject( new poisonApple(), x, y);
            numberOfPoison = numberOfPoison + 1;
         } 
+    }
+    
+    public void makeSegments()
+    {
+        if( Segments < Segments)
+        {
+            int segmentX = getX();
+            int segmentY = getY();
+            getWorld().addObject( new snakeBody(), segmentX, segmentY);
+        }
     }
     
     public void touchWall()
