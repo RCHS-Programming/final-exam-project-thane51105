@@ -14,6 +14,6 @@ public class snakeBody extends Actor
      */
     public void act() 
     {
-        //setLocation(Player.getX(), Player.getY());
+        
     }    
 }

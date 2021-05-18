@@ -31,6 +31,7 @@ public class Player extends Actor
         touchBody();
         makeApples();
         makePoison();
+        showScore();
     }
     
     public void Turn()
@@ -51,7 +52,7 @@ public class Player extends Actor
         if(isTouching(Apple.class))
         {
             removeTouching(Apple.class);
-            Segments = Segments + 2;
+            Segments = Segments + 1;
             numberOfApples = numberOfApples - 1;
             int segmentX = getX();
             int segmentY = getY();
@@ -61,7 +62,7 @@ public class Player extends Actor
         if(isTouching(poisonApple.class))
         {
             removeTouching(poisonApple.class);
-            Segments = Segments -3;
+            Segments = Segments -1;
             numberOfPoison = numberOfPoison - 1;
             if( Segments < 0)
             {
@@ -92,8 +93,6 @@ public class Player extends Actor
         } 
     }
     
-
-    
     public void touchWall()
     {
         if(isTouching(Wall.class))
@@ -108,5 +107,10 @@ public class Player extends Actor
         {
             Greenfoot.stop();
         }
+    }
+    
+    public void showScore()
+    {
+        getWorld().showText("Score: ",140, 675 );
     }
 }
