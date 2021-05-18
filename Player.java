@@ -31,7 +31,6 @@ public class Player extends Actor
         touchBody();
         makeApples();
         makePoison();
-        makeSegments();
     }
     
     public void Turn()
@@ -54,6 +53,9 @@ public class Player extends Actor
             removeTouching(Apple.class);
             Segments = Segments + 2;
             numberOfApples = numberOfApples - 1;
+            int segmentX = getX();
+            int segmentY = getY();
+            getWorld().addObject( new snakeBody(), segmentX + 75, segmentY);
         }
         
         if(isTouching(poisonApple.class))
@@ -90,15 +92,7 @@ public class Player extends Actor
         } 
     }
     
-    public void makeSegments()
-    {
-        if( Segments < Segments)
-        {
-            int segmentX = getX();
-            int segmentY = getY();
-            getWorld().addObject( new snakeBody(), segmentX, segmentY);
-        }
-    }
+
     
     public void touchWall()
     {
