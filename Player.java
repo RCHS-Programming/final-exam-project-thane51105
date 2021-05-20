@@ -11,11 +11,15 @@ public class Player extends Actor
     public int Segments;
     public int numberOfApples;
     int count;
+    public boolean worldChange1;
+    public boolean worldChange2;
     public Player()
     {
         setRotation(270);
         Segments = 0;
         numberOfApples = 0;
+        worldChange1 = false;
+        worldChange2 = false;
     }
 
     /**
@@ -34,6 +38,7 @@ public class Player extends Actor
         makeApples();
         showScore();
         changeWorld();
+        changeWorld2();
     }
     
     public void Turn()
@@ -110,9 +115,19 @@ public class Player extends Actor
     
     public void changeWorld()
     {
-        if( Segments >= 15)
+        if( Segments >= 15 && worldChange1 == false)
         {
-            Greenfoot.setWorld(new SnakeWorld2());
+            worldChange1 = true;
+            Greenfoot.setWorld(new SnakeWorld2(this));
+        }
+    }
+
+    public void changeWorld2()
+    {
+        if( Segments >= 30 && worldChange2 == false)
+        {
+            worldChange2 = true;
+            Greenfoot.setWorld(new SnakeWorld3(this));
         }
     }
 }
