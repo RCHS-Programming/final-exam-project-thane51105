@@ -10,12 +10,12 @@ public class Player extends Actor
 {
     public int Segments;
     public int numberOfApples;
-    public int numberOfPoison;
+    int count;
     public Player()
     {
+        setRotation(270);
         Segments = 0;
         numberOfApples = 0;
-        numberOfPoison = 0;
     }
 
     /**
@@ -24,13 +24,14 @@ public class Player extends Actor
      */
     public void act() 
     {
+        count++;
+        getWorld().addObject(new snakeBody(), getX(), getY());
         move(3);
         Turn();
         eatApples();
         touchWall();
-        touchBody();
+        //touchBody();
         makeApples();
-        makePoison();
         showScore();
     }
     
@@ -38,12 +39,22 @@ public class Player extends Actor
     {
         if (Greenfoot.isKeyDown("left"))
         {
-            turn(-5);
+            setRotation(180);
         }
         
         if (Greenfoot.isKeyDown("right"))
         {
-            turn(5);
+            setRotation(0);
+        }
+        
+        if (Greenfoot.isKeyDown("up"))
+        {
+            setRotation(270);
+        }
+        
+        if (Greenfoot.isKeyDown("down"))
+        {
+            setRotation(90);
         }
     }
     
@@ -56,18 +67,6 @@ public class Player extends Actor
             numberOfApples = numberOfApples - 1;
             int segmentX = getX();
             int segmentY = getY();
-            getWorld().addObject( new snakeBody(), segmentX + 75, segmentY);
-        }
-        
-        if(isTouching(poisonApple.class))
-        {
-            removeTouching(poisonApple.class);
-            Segments = Segments -1;
-            numberOfPoison = numberOfPoison - 1;
-            if( Segments < 0)
-            {
-                Greenfoot.stop();
-            }
         }
     }
     
@@ -80,17 +79,6 @@ public class Player extends Actor
            getWorld().addObject( new Apple(), x, y);
            numberOfApples = numberOfApples + 1;
         }
-    }
-    
-    public void makePoison()
-    {
-       if( numberOfPoison < 1)
-        {
-           int x = Greenfoot.getRandomNumber(600) + 100;
-           int y = Greenfoot.getRandomNumber(600) + 100;
-           getWorld().addObject( new poisonApple(), x, y);
-           numberOfPoison = numberOfPoison + 1;
-        } 
     }
     
     public void touchWall()
@@ -111,6 +99,6 @@ public class Player extends Actor
     
     public void showScore()
     {
-        getWorld().showText("Score: ",140, 675 );
+        getWorld().showText("Score: " + Segments,140, 675 );
     }
 }
