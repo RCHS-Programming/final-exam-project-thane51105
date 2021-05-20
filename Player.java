@@ -110,14 +110,9 @@ public class Player extends Actor
     
     public void changeWorld()
     {
-        if( Segments > 15)
+        if( Segments >= 15)
         {
             Greenfoot.setWorld(new SnakeWorld2());
-        }
-        
-        if( Segments > 30)
-        {
-            Greenfoot.setWorld(new SnakeWorld3());
         }
     }
 }
