@@ -33,6 +33,7 @@ public class Player extends Actor
         //touchBody();
         makeApples();
         showScore();
+        changeWorld();
     }
     
     public void Turn()
@@ -87,6 +88,11 @@ public class Player extends Actor
         {
             Greenfoot.stop();
         }
+        
+        if(isAtEdge())
+        {
+            Greenfoot.stop();
+        }
     }
     
     public void touchBody()
@@ -100,5 +106,18 @@ public class Player extends Actor
     public void showScore()
     {
         getWorld().showText("Score: " + Segments,140, 675 );
+    }
+    
+    public void changeWorld()
+    {
+        if( Segments > 15)
+        {
+            Greenfoot.setWorld(new SnakeWorld2());
+        }
+        
+        if( Segments > 30)
+        {
+            Greenfoot.setWorld(new SnakeWorld3());
+        }
     }
 }
