@@ -110,7 +110,20 @@ public class Player extends Actor
     
     public void showScore()
     {
-        getWorld().showText("Score: " + Segments,140, 675 );
+        if( worldChange1 == false && worldChange2 == false)
+        {
+            getWorld().showText("Score: " + Segments,140, 675 );
+        }
+        
+        if( worldChange1 == true && worldChange2 == false)
+        {
+            getWorld().showText("Score: " + Segments, 75, 575 );
+        }
+        
+        if( worldChange1 == true && worldChange2 == true)
+        {
+            getWorld().showText("Score: " + Segments, 50, 375 );
+        }
     }
     
     public void changeWorld()
